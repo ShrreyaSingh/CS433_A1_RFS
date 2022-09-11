@@ -13,15 +13,15 @@ The layered architecture is based on OSI model:
 
 ![alt text](images/OSI.png?raw=true)
 
-* Layer N: File Service Layer: On client side, it takes the user inputs for command execution, checks for bad requests and if the request is valid, propagates the data units to subsequent layers for encryption and servicing.
+* ``Layer N``: File Service Layer: On client side, it takes the user inputs for command execution, checks for bad requests and if the request is valid, propagates the data units to subsequent layers for encryption and servicing.
 
-* Layer N-1: Crypto Layer: Encrypts and decrypts the data using three functions before transmitting it further in the network:
+* ``Layer N-1``: Crypto Layer: Encrypts and decrypts the data using three functions before transmitting it further in the network:
 
   * Plain text → No change to the input; (No encryption or decryption)
   * Substitute → Only alphanumeric characters will be substituted with fixed offset, say Caesar cipher with offset 2. Example ARTZ will be substituted with CTVB
   * Transpose → Revere the contents in a word by word manner. Example ARTZ willbe substituted with ZTRA.
 
-* Layer N-2: Transport layer: Create and implement client and server sockets to establish a connection using TCP Protocol. The encrypted data is transmitted over the network wherein the client sends its request and server returns a response with appropriate status.
+* ``Layer N-2``: Transport layer: Create and implement client and server sockets to establish a connection using TCP Protocol. The encrypted data is transmitted over the network wherein the client sends its request and server returns a response with appropriate status.
 
 Code Execution
 --------------------
