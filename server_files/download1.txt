@@ -1,0 +1,4 @@
+I am a file downloaded from the server 
+and I have multiple lines
+with some emojis :)
+Checking Encryption
