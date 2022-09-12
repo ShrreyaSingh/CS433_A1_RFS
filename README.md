@@ -35,4 +35,4 @@ Code Execution
 * On the server side, this service data unit is listened to by the socket of the server.
 * It is decrypted and the service layer performs the necessary functions according to the commands entered by the user.
 * The server's response is again encrypted and sent back to the client over the network, where it's decrypted and the message with the status flag is displayed in the terminal.
-* Please note that, for ``dwd`` and ``upd``, the files to be downloaded should be present within ``server_files`` directory and the ones to be uploaded should be present within ``client_files`` directory. The files will be downloaded to ``client_files`` folder and uploaded inside ``server_files`` folder.
+* Please note that, for ``dwd`` and ``upd``, the files to be downloaded should be present within ``server_files`` directory i.e. file_path should be like ``server_files/*`` and the ones to be uploaded should be present within ``client_files`` directory i.e. file_path should be like ``client_files/*``. The files will be downloaded to ``client_files`` folder and uploaded inside ``server_files`` folder.
