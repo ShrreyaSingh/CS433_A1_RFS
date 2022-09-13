@@ -2,7 +2,7 @@
 
 import socket
 import s_app
-import crypto
+import s_crypto
 
 def server_conn():
     HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
@@ -29,13 +29,13 @@ def server_conn():
                 cmd = cmd.split(sep2)
                 encrypt_code = cmd[0]
                 encrypt_cmd = sep2.join(cmd[1:])
-                cmd = crypto.encrypt(encrypt_cmd.encode(),encrypt_code.encode(),"decrypt".encode()) 
+                cmd = s_crypto.encrypt(encrypt_cmd.encode(),encrypt_code.encode(),"decrypt".encode()) 
                 # print("Server received request: {}".format(cmd.decode()))
                 ## Provide service
                 data, flag = s_app.serve_client(cmd)
                 response = flag.decode() + sep2 + data.decode()
                 
-                encrypt_response = crypto.encrypt(response.encode(),encrypt_code.encode(),"encrypt".encode()) 
+                encrypt_response = s_crypto.encrypt(response.encode(),encrypt_code.encode(),"encrypt".encode()) 
                 encrypt_response = encrypt_code + sep2 + encrypt_response.decode()
                 # print("Server sends response {}".format(encrypt_response))
                 conn.sendall(encrypt_response.encode())

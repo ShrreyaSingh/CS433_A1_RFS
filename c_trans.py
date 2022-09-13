@@ -1,7 +1,7 @@
 ## Client Transport Layer
 
 import socket
-import crypto
+import c_crypto
 
 def client_conn(cmd):
 
@@ -21,7 +21,7 @@ def client_conn(cmd):
         encrypt_code = response[0]
         encrypt_response = sep2.join(response[1:])
 
-        response = crypto.encrypt(encrypt_response.encode(),encrypt_code.encode(),"decrypt".encode())
+        response = c_crypto.encrypt(encrypt_response.encode(),encrypt_code.encode(),"decrypt".encode())
         # print("Client received Response: {}".format(response.decode()))
         response = response.decode().split(sep2)
         flag = response[0]

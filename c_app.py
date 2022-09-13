@@ -1,7 +1,7 @@
 ## Client Application Layer
 
 import c_trans
-import crypto
+import c_crypto
 
 ## Keep a variable check for bad requests
 error = 0
@@ -106,7 +106,7 @@ Enter an integer to select the encryption type:
         print("Invalid Command")
     else:
         ## Encrypt and establish connection
-        encrypt_cmd = crypto.encrypt(cmd.encode(),encrypt_code.encode(),"encrypt".encode()) ## Returned in bytes
+        encrypt_cmd = c_crypto.encrypt(cmd.encode(),encrypt_code.encode(),"encrypt".encode()) ## Returned in bytes
         request = encrypt_code + sep2 + encrypt_cmd.decode()
 
         print("\nSetting up connection ...")
