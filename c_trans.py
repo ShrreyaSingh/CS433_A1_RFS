@@ -34,11 +34,6 @@ def client_conn(cmd):
         flag = response[0]
         data = response[1]
 
-        # Decode date, decrypt it
-
     # Send error flag, msg to app layer in encoded form
     print("\nConnection closed :)")
     return data.encode(), flag.encode()
-
-
-# client_conn()

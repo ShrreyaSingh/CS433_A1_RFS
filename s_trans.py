@@ -6,6 +6,7 @@ import s_crypto
 
 
 def server_conn():
+
     HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
     PORT = 2500  # Port to listen on (non-privileged ports are > 1023)
 
@@ -13,13 +14,14 @@ def server_conn():
 
         s.bind((HOST, PORT))
         s.listen()
-        conn, addr = s.accept()
+
         sep2 = '^@^'
 
-        with conn:
-            print(f"Connected by {addr}")
-            while True:
-
+        # Server is always kept on and accepts client requests whenever some client makes any request
+        while True:
+            conn, addr = s.accept()
+            with conn:
+                print(f"Connected by {addr}")
                 cmd = conn.recv(2048)
 
                 cmd = cmd.decode()

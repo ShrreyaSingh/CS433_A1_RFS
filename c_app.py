@@ -27,10 +27,8 @@ UPD client_file_path
 # ''')
 
 cmd_code = -1
-# cmd_code = int(input())
 
 full_cmd = full_cmd.split(' ')
-# print(full_cmd[0].lower(),cmd_code)
 
 if (full_cmd[0].lower().__eq__('cwd')):
     cmd_code = 1

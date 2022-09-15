@@ -53,7 +53,7 @@ def serve_client(request):
             filename = request[2]
             filedata = request[3]
 
-            server_path = "server_files/"+filename
+            server_path = filename
             server_file = open(server_path, "w+")
             server_file.write(filedata)
 
