@@ -28,7 +28,7 @@ Code Execution
 
 * Fork and clone this repo into your local system. Change directory to the cloned repo directory ``CS433_A1_RFS``.
 * In the command prompt, create a server socket by running ``s_trans.py`` using command ``python3 s_trans.py``, incase of python3. This will start the server, which will be always ON (unless explicitly terminated by ``control+C``).
-* Now, run ``c_app.py`` to get a list of valid commands. Enter any one of the commands in the terminal in the correct format.
+* Now, run ``python3 c_app.py`` to get a list of valid commands. Enter any one of the commands in the terminal in the correct format.
 * If the command is valid, a client socket will be created by ``c_trans.py``. 
 * The data unit will be encrypted in the presentation layer according to the user defined encryption procedure (mentioned above). Kindly note that only valid integer numbers should be given as input to choose the encryption option.
 * Encryption header (identifying the encryption type) is attached to the content and protocol data unit is sent over the network to the server side.
