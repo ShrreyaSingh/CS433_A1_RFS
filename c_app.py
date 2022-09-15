@@ -119,7 +119,7 @@ Enter an integer to select the encryption type:
                 data_list = data.split(sep)
                 filename = data_list[0]
                 filedata = data_list[1]
-                client_path = "client_files/"+filename
+                client_path = filename
                 client_file = open(client_path, "w+")
                 client_file.write(filedata)
 
@@ -128,12 +128,16 @@ Enter an integer to select the encryption type:
             except:
                 error = 1
 
-        print("-------------------------------")
-        print(f"Received: {data!r}")
-        if (cmd_code in [3, 4, 5]):
-            status = -1
-            if (int(flag) == 0):
-                status = "NOK"
-            elif (int(flag)):
-                status = "OK"
-            print("------------------------------- \nSTATUS: {}".format(status))
+        if(error==0):
+            print("-------------------------------")
+            print(f"Received: {data!r}")
+            if (cmd_code in [3, 4, 5]):
+                status = -1
+                if (int(flag) == 0):
+                    status = "NOK"
+                elif (int(flag)):
+                    status = "OK"
+                print("------------------------------- \nSTATUS: {}".format(status))
+        else:
+            print("------------------------------- \nSTATUS: NOK")
+            
